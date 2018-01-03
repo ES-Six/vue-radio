@@ -18,9 +18,9 @@ module.exports = {
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
-    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    aggregateTimeout: 150,
+    poll: 500,
 
-    
     /**
      * Source Maps
      */

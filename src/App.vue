@@ -1,23 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="background-animation">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <router-view class="main-page-container"/>
+    </div>
+    <nav-bar></nav-bar>
+    <player></player>
   </div>
 </template>
-
 <script>
+import Navbar from '@/components/Navbar';
+import Player from '@/components/Player';
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'nav-bar': Navbar,
+    'player': Player
+  }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import 'bootstrap/dist/css/bootstrap.css';
+  @import 'bootstrap-vue/dist/bootstrap-vue.css';
+  @import './css/style.css';
 </style>
