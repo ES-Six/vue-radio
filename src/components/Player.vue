@@ -33,7 +33,6 @@
 <script>
   import VueSlider from 'vue-slider-component';
   import EventBus from '@/js/eventBus';
-  import Recorder from '@/js/recorder';
   const FileSaver = require('file-saver');
 
   export default {
