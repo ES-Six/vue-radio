@@ -9,12 +9,12 @@
           <i v-if="isPlaying" v-on:click="stopRadio()" class="fa fa-stop interface-icon"></i>
         </b-nav-item>
         <b-nav-text class="player-volume-slider">
-          <vue-slider v-model="volume.value" tooltip="hover" v-bind:min="volume.min" v-bind:max="volume.max"/>
+          <vue-slider v-model="volume.value" tooltip="hover" v-bind:min="volume.min" v-bind:max="volume.max" @callback="applyVolume"/>
         </b-nav-text>
         <b-nav-item href="#" class="add-space-to-volume-icon">
-          <i v-if="volume.value === 0" class="fa fa-volume-off interface-icon" v-on:click="volume.value = 30"></i>
-          <i v-if="volume.value > 0 && volume.value <= 50" class="fa fa-volume-down interface-icon" v-on:click="volume.value = 0"></i>
-          <i v-if="volume.value > 50" class="fa fa-volume-up interface-icon" v-on:click="volume.value = 0"></i>
+          <i v-if="volume.value === 0" class="fa fa-volume-off interface-icon" v-on:click="volume.value = 30;applyVolume()"></i>
+          <i v-if="volume.value > 0 && volume.value <= 50" class="fa fa-volume-down interface-icon" v-on:click="volume.value = 0;applyVolume()"></i>
+          <i v-if="volume.value > 50" class="fa fa-volume-up interface-icon" v-on:click="volume.value = 0;applyVolume()"></i>
         </b-nav-item>
         <b-nav-item href="#">
           <i v-if="isRecording" v-on:click="stopRecordLiveStream()" class="fa fa-dot-circle-o interface-icon red"></i>
