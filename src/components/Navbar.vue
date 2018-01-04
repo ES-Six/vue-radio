@@ -9,7 +9,7 @@
     <b-collapse id="vertical-menu" v-model="verticalMenuIsCollapsed" v-bind:class="{'opened': !verticalMenuIsCollapsed, 'closed': verticalMenuIsCollapsed}">
       <div class="container">
         <ul class="menu-items">
-          <li v-on:click="verticalMenuIsCollapsed = false">
+          <li v-on:click="verticalMenuIsCollapsed = false;startSaveRadio()">
             <a href="#">Enregistrer le direct</a>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
@@ -43,11 +43,21 @@
   </b-navbar>
 </template>
 <script>
+  import eventBus from '@/js/eventBus';
+
   export default {
     data () {
       return {
         verticalMenuIsCollapsed: false
       }
+    },
+    methods: {
+      startSaveRadio() {
+        eventBus.$emit('start-record-stream');
+      },
+      stopSaveRadio() {
+        eventBus.$emit('stop-record-stream');
+      },
     }
   }
 </script>

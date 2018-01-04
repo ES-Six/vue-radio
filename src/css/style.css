@@ -330,6 +330,22 @@ html {
   }
 }
 
+.player-volume-slider {
+  width: 150px
+}
+
+.add-space-to-volume-icon {
+  margin-right: 8px;
+}
+
+.fa-dot-circle-o.interface-icon.orange {
+  color: orange;
+}
+
+.fa-dot-circle-o.interface-icon.red {
+  color: red;
+}
+
 /* Main Page container */
 
 .main-page-container {
@@ -377,10 +393,4 @@ li.radio-app-logo a img {
 .interface-icon {
   color: white;
   font-size: 20px
-}
-
-/* Volume range slider */
-
-.player-volume-slider {
-  width: 150px
 }
