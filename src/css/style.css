@@ -351,9 +351,15 @@ html {
 .main-page-container {
   padding-top: 56px;
   overflow: auto;
-  padding-bottom: 56px;
   height: 100vh;
   margin-top: -6px;
+}
+
+.main-page-container:after {
+  height: 56px;
+  width: 100%;
+  content: "";
+  display: block;
 }
 
 /* Radio stations */
@@ -366,10 +372,12 @@ html {
 }
 
 .radio {
-  height: 157px;
-  padding: 10px;
+  height: 150px;
   max-width: 150px;
-  display: block;
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin-left: 15px;
   margin-top: 15px;
@@ -387,7 +395,8 @@ li.radio-app-logo a img {
 }
 
 .radio img.radio-logo {
-  max-width: 100%;
+  max-width: 130px;
+  max-height: 130px;
 }
 
 .interface-icon {

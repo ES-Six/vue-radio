@@ -2,7 +2,11 @@
   <div>
     <div class="radio-container">
       <a href="#" v-for="(station, index) in app_registered_stations" v-on:click="playRadioAppStation(index)" class="radio">
-        <img v-bind:src="station.logo" v-bind:alt="station.alt" class="radio-logo"/>
+        <picture>
+          <source v-if="station.logo_webp !== null" v-bind:srcset="station.logo_webp" type="image/webp">
+          <source v-if="station.logo_png !== null" v-bind:srcset="station.logo_png" type="image/png">
+          <img v-if="station.logo_png !== null" v-bind:src="station.logo_png" v-bind:alt="station.alt" class="radio-logo">
+        </picture>
       </a>
     </div>
   </div>
@@ -16,44 +20,52 @@
       return {
         app_registered_stations:  [
           {
-            logo: "http://static.radio.fr/images/broadcasts/07/f7/3366/c300.png",
+            logo_png: "static/img/png/logo-france-musique.png",
+            logo_webp: "static/img/webp/logo-france-musique.webp",
             alt: "France musique",
             stream_urls: []
           },
           {
-            logo: "http://www.nrj.fr/img/logo-nrj.svg",
+            logo_png: "static/img/png/logo-nrj.png",
+            logo_webp: "static/img/webp/logo-nrj.webp",
             alt: "NRJ",
             stream_urls: [
               "http://185.52.127.173/fr/30001/mp3_128.mp3?origine=fluxradios"
             ]
           },
           {
-            logo: "https://cdn-radiotime-logos.tunein.com/s25232d.png",
+            logo_png: "static/img/png/logo-skyrock.png",
+            logo_webp: "static/img/webp/logo-skyrock.webp",
             alt: "Skyrock",
             stream_urls: []
           },
           {
-            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/RFI_logo_2013.svg/1200px-RFI_logo_2013.svg.png",
+            logo_png: "static/img/png/logo-rfi.png",
+            logo_webp: "static/img/webp/logo-rfi.webp",
             alt: "rfi",
             stream_urls: []
           },
           {
-            logo: "https://static-media.streema.com/media/cache/23/72/23726fa68a7b868a8097c860233d19f4.jpg",
+            logo_png: "static/img/png/logo-rfm.png",
+            logo_webp: "static/img/webp/logo-rfm.webp",
             alt: "RFM",
             stream_urls: []
           },
           {
-            logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/France_inter_2005_logo.svg/1024px-France_inter_2005_logo.svg.png",
+            logo_png: "static/img/png/logo-france-inter.png",
+            logo_webp: "static/img/webp/logo-france-inter.webp",
             alt: "France inter",
             stream_urls: []
           },
           {
-            logo: "http://www.resaprod.fr/NOSTALGIE-2015.jpg",
+            logo_png: "static/img/png/logo-nostalgie.png",
+            logo_webp: "static/img/webp/logo-nostalgie.webp",
             alt: "Nostalgie",
             stream_urls: []
           },
           {
-            logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Logo-vr.png",
+            logo_png: "static/img/png/logo-virgin-radio.png",
+            logo_webp: "static/img/webp/logo-virgin-radio.webp",
             alt: "Virgin radio",
             stream_urls: []
           }

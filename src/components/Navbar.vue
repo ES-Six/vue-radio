@@ -31,7 +31,13 @@
     <b-collapse is-nav id="nav_collapse">
       <!-- Center aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item class="d-none d-md-block radio-app-logo" href="#"><img src="../assets/logo-without-text.png" alt="Logo de Radio-App"></b-nav-item>
+        <b-nav-item class="d-none d-md-block radio-app-logo" href="#">
+          <picture>
+            <source srcset="static/img/webp/logo-without-text.webp" type="image/webp">
+            <source srcset="static/img/png/logo-without-text.png" type="image/png">
+            <img src="static/img/png/logo-without-text.png" alt="logo de Radio-App">
+          </picture>
+        </b-nav-item>
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
