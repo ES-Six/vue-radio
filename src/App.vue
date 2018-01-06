@@ -4,10 +4,12 @@
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-      <router-view class="main-page-container"/>
+      <div class="global-container">
+        <nav-bar></nav-bar>
+        <router-view class="main-page-container"/>
+        <player></player>
+      </div>
     </div>
-    <nav-bar></nav-bar>
-    <player></player>
   </div>
 </template>
 <script>

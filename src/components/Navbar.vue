@@ -16,7 +16,7 @@
             <a href="#">Parametres</a>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
-            <a href="#">A propos</a>
+            <router-link to="/about">A propos</router-link>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
             <a href="#">Contact</a>
@@ -31,7 +31,7 @@
     <b-collapse is-nav id="nav_collapse">
       <!-- Center aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item class="d-none d-md-block radio-app-logo" href="#">
+        <b-nav-item class="d-none d-md-block radio-app-logo" to="/">
           <picture>
             <source srcset="static/img/webp/logo-without-text.webp" type="image/webp">
             <source srcset="static/img/png/logo-without-text.png" type="image/png">
