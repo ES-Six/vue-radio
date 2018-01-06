@@ -18,7 +18,15 @@
   </div>
 </template>
 <script>
+  import EventBus from '@/js/eventBus';
+
   export default {
     name: 'About',
+    mounted() {
+      EventBus.$emit('set-text-friendly-background', true);
+    },
+    beforeDestroy() {
+      EventBus.$emit('set-text-friendly-background', false);
+    }
   }
 </script>

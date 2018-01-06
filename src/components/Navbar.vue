@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="md" fixed="top" type="dark" class="navbar-top">
+  <b-navbar toggleable="md" sticky type="dark" class="navbar-top">
 
     <b-btn v-b-toggle.vertical-menu variant="transparent" class="vertical-menu-toggle show-top">
       <span class="icon-bar top-bar"></span>

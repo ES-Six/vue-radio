@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="alway" fixed="bottom" type="dark" class="navbar-bottom">
+  <b-navbar toggleable="alway" sticky type="dark" class="navbar-bottom">
 
     <b-collapse is-nav id="player_collaped">
       <!-- Left aligned nav items -->
@@ -93,6 +93,7 @@
         if (this.$data.isRecording === false && this.$data.recordingIsStoping === false) {
           window.AudioContext = window.AudioContext || window.webkitAudioContext;
           const audio_context = new AudioContext();
+          this.$data.player.captureStream = this.$data.player.captureStream || this.$data.player.mozCaptureStream;
           const audio_input = audio_context.createMediaStreamSource(this.$data.player.captureStream());
           this.$data.recorder = new Recorder(audio_input);
           this.$data.recorder.record();
