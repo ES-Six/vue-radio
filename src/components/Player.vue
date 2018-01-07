@@ -59,6 +59,7 @@
         },
         radio: null,
         player: null,
+        playerPlayer: null,
         recorder: null
       }
     },
@@ -91,22 +92,48 @@
       },
       startRecordLiveStream() {
         if (this.$data.isRecording === false && this.$data.recordingIsStoping === false) {
+          //Recuperation du context audio cross browser
           window.AudioContext = window.AudioContext || window.webkitAudioContext;
           const audio_context = new AudioContext();
-          this.$data.player.captureStream = this.$data.player.captureStream || this.$data.player.mozCaptureStream;
-          const audio_input = audio_context.createMediaStreamSource(this.$data.player.captureStream());
-          this.$data.recorder = new Recorder(audio_input);
-          this.$data.recorder.record();
-          this.$data.isRecording = true;
+
+          //Demarage du lecteur dédié à l'enregistrement
+          this.$data.recorderPlayer = new Audio(this.$data.radio.stream_urls[0]);
+          this.$data.recorderPlayer.setAttribute("crossOrigin", "anonymous");
+          this.$data.recorderPlayer.oncanplay = () => {
+            //Coupe le son pour le pas déranger l'utilisateur
+            //L'enregistrement enregistrera quand même car on enregistre le flux audio et non le son qui sort des haut parleurs
+            this.$data.recorderPlayer.muted = true;
+
+            this.$data.recorderPlayer.play();
+            //Capture du flux et enregistrement en temps réel avec recorder.js
+            this.$data.recorderPlayer.captureStream = this.$data.recorderPlayer.captureStream || this.$data.recorderPlayer.mozCaptureStream;
+            const audio_input = audio_context.createMediaStreamSource(this.$data.recorderPlayer.captureStream());
+            this.$data.recorder = new Recorder(audio_input);
+            this.$data.recorder.record();
+            //Démuter sur firefox car firefox enregistre le son en sortie...
+            if (this.$data.recorderPlayer.mozCaptureStream) //Sauf sur firefox
+              this.$data.recorderPlayer.muted = false;
+            //Affichage du symbole enregistrer...
+            this.$data.isRecording = true;
+          };
         }
       },
       stopRecordLiveStream() {
         if (this.$data.isRecording === true) {
           const vue_context = this;
           const audio_format = "audio/wav"; //mettre "audio/mpeg" pour exporter en MP3
-          window.URL = window.URL || window.webkitURL;
+          window.URL = window.URL || window.webkitURL; //Compatibilité entre les navigateurs pour l'export de blobs en URL
+
+
           this.$data.isRecording = false;
           this.$data.recordingIsStoping = true;
+
+          //Arrêt du lecteur dédié à l'enregistrement
+          this.$data.recorderPlayer.setAttribute("src", "");
+          this.$data.recorderPlayer.pause();
+          this.$data.recorderPlayer = null;
+
+          //Arrêt de l'enregistreur et export en WAV ou MP3 selon le format choisi
           this.$data.recorder.stop();
           this.$data.recorder.exportWAV(function (blob) {
             const date = new Date();
