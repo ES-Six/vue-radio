@@ -124,7 +124,6 @@
           const audio_format = "audio/wav"; //mettre "audio/mpeg" pour exporter en MP3
           window.URL = window.URL || window.webkitURL; //Compatibilité entre les navigateurs pour l'export de blobs en URL
 
-
           this.$data.isRecording = false;
           this.$data.recordingIsStoping = true;
 
