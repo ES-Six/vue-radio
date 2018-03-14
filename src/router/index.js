@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import RadioStations from '@/components/RadioStations'
 import About from '@/components/About'
+import Parameters from '@/components/Parameters'
+import Contact from '@/components/Contact'
 
 Vue.use(Router);
 
@@ -16,6 +18,16 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
+    },
+    {
+      path: '/parameters',
+      name: 'Parameters',
+      component: Parameters
     }
   ]
 })

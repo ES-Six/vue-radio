@@ -13,16 +13,16 @@
             <a href="#">Enregistrer le direct</a>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
-            <a href="#">Parametres</a>
+            <router-link to="/parameters">Parametres</router-link>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
             <router-link to="/about">A propos</router-link>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
-            <a href="#">Contact</a>
+            <router-link to="/contact">Contact</router-link>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
-            <a href="#">Don</a>
+            <router-link to="/donate">Don</router-link>
           </li>
         </ul>
       </div>

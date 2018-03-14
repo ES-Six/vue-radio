@@ -13,63 +13,13 @@
 </template>
 <script>
   import eventBus from '@/js/eventBus';
+  import radioStations from "@/js/radioStations";
 
   export default {
     name: 'RadioPlayer',
     data () {
       return {
-        app_registered_stations:  [
-          {
-            logo_png: "static/img/png/logo-france-musique.png",
-            logo_webp: "static/img/webp/logo-france-musique.webp",
-            alt: "France musique",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-nrj.png",
-            logo_webp: "static/img/webp/logo-nrj.webp",
-            alt: "NRJ",
-            stream_urls: [
-              "http://185.52.127.173/fr/30001/mp3_128.mp3?origine=fluxradios"
-            ]
-          },
-          {
-            logo_png: "static/img/png/logo-skyrock.png",
-            logo_webp: "static/img/webp/logo-skyrock.webp",
-            alt: "Skyrock",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-rfi.png",
-            logo_webp: "static/img/webp/logo-rfi.webp",
-            alt: "rfi",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-rfm.png",
-            logo_webp: "static/img/webp/logo-rfm.webp",
-            alt: "RFM",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-france-inter.png",
-            logo_webp: "static/img/webp/logo-france-inter.webp",
-            alt: "France inter",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-nostalgie.png",
-            logo_webp: "static/img/webp/logo-nostalgie.webp",
-            alt: "Nostalgie",
-            stream_urls: []
-          },
-          {
-            logo_png: "static/img/png/logo-virgin-radio.png",
-            logo_webp: "static/img/webp/logo-virgin-radio.webp",
-            alt: "Virgin radio",
-            stream_urls: []
-          }
-        ]
+        app_registered_stations: radioStations
       }
     },
     methods: {

@@ -1,0 +1,66 @@
+[
+  {
+    "logo_png": "static/img/png/logo-france-musique.png",
+    "logo_webp": "static/img/webp/logo-france-musique.webp",
+    "alt": "France musique",
+    "stream_urls": [
+      "http://chai5she.cdn.dvmr.fr/francemusique-midfi.mp3"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-nrj.png",
+    "logo_webp": "static/img/webp/logo-nrj.webp",
+    "alt": "NRJ",
+    "stream_urls": [
+      "http://185.52.127.173/fr/30001/mp3_128.mp3?origine=fluxradios"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-skyrock.png",
+    "logo_webp": "static/img/webp/logo-skyrock.webp",
+    "alt": "Skyrock",
+    "stream_urls": [
+      "http://icecast.skyrock.net/s/natio_mp3_128k"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-rfi.png",
+    "logo_webp": "static/img/webp/logo-rfi.webp",
+    "alt": "rfi",
+    "stream_urls": [
+      "http://live02.rfi.fr/rfimonde-96k.mp3"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-rfm.png",
+    "logo_webp": "static/img/webp/logo-rfm.webp",
+    "alt": "RFM",
+    "stream_urls": [
+      "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-france-inter.png",
+    "logo_webp": "static/img/webp/logo-france-inter.webp",
+    "alt": "France inter",
+    "stream_urls": [
+      "http://chai5she.cdn.dvmr.fr/franceinter-midfi.mp3"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-nostalgie.png",
+    "logo_webp": "static/img/webp/logo-nostalgie.webp",
+    "alt": "Nostalgie",
+    "stream_urls": [
+      "http://185.52.127.132/fr/30601/mp3_128.mp3?origine=fluxradios"
+    ]
+  },
+  {
+    "logo_png": "static/img/png/logo-virgin-radio.png",
+    "logo_webp": "static/img/webp/logo-virgin-radio.webp",
+    "alt": "Virgin radio",
+    "stream_urls": [
+      "http://vr-live-mp3-128.scdn.arkena.com/virginradio.mp3"
+    ]
+  }
+]
