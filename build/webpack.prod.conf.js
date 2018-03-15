@@ -11,6 +11,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlCriticalPlugin = require("html-critical-webpack-plugin")
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const env = require('../config/prod.env')
 
@@ -118,6 +119,39 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'Vue-Radio-App',
+      filename: 'service-worker.js',
+      staticFileGlobs: ['dist/**/*.{js,html,css,webp,png,jpg}'],
+      minify: true,
+      stripPrefix: 'dist/',
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com\//,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^https:\/\/code\.getmdl\.io\//,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^https:\/\/maxcdn\.bootstrapcdn\.com\//,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^.+app\.[a-zA-Z0-9.]+\.db[a-zA-Z0-9]+\.css/,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^.+manifest\.json/,
+          handler: 'cacheFirst'
+        }]
+    }),
+
     new HtmlCriticalPlugin({
       base: path.join(path.resolve(__dirname), '../dist/'),
       src: 'index.html',
@@ -131,6 +165,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         blockJSRequests: false,
       }
     }),
+
+    new CopyWebpackPlugin([
+      {
+        from: './manifest.json',
+        to: './',
+        toType: 'dir'
+      }
+    ])
   ]
 })
 
