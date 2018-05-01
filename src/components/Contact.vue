@@ -6,8 +6,8 @@
       </div>
       <div class="col-md-12">
         <p>
-          Vous pouvez contacter l'auteur de ce site par email à l'adresse suivante :
-          <a href="mailto:brendan.bobis@epitech.eu">brendan.bobis@epitech.eu</a>
+          Vous pouvez contacter de dévellopeur de ce site web à l'adresse suivante :
+          <a href="mailto:brendan.bobis@epitech.eu" target="_blank">brendan.bobis@epitech.eu</a>
         </p>
       </div>
     </div>

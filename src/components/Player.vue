@@ -23,7 +23,7 @@
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto not-for-mobile">
-        <b-nav-item href="#">Site de cette radio</b-nav-item>
+        <b-nav-item v-if="webradioUrl.length !== 0" target="_blank" v-bind:href="webradioUrl">Site de cette radio</b-nav-item>
       </b-navbar-nav>
 
     </b-collapse>
@@ -60,7 +60,8 @@
         radio: null,
         player: null,
         playerPlayer: null,
-        recorder: null
+        recorder: null,
+        webradioUrl: ""
       }
     },
     methods: {
@@ -75,6 +76,8 @@
           this.applyVolume(this.$data.volume.value);
           this.$data.player.play();
           this.$data.isPlaying = true;
+          if (this.$data.radio.webradioUrl !== undefined)
+            this.$data.webradioUrl = this.$data.radio.webradioUrl;
         }
       },
       stopRadio() {

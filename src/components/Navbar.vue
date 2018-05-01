@@ -9,6 +9,9 @@
     <b-collapse id="vertical-menu" v-model="verticalMenuIsCollapsed" v-bind:class="{'opened': !verticalMenuIsCollapsed, 'closed': verticalMenuIsCollapsed}">
       <div class="container">
         <ul class="menu-items">
+          <li v-on:click="verticalMenuIsCollapsed = false">
+            <router-link to="/">Accueil</router-link>
+          </li>
           <li v-on:click="verticalMenuIsCollapsed = false;startSaveRadio()">
             <a href="#">Enregistrer le direct</a>
           </li>
@@ -20,9 +23,6 @@
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
             <router-link to="/contact">Contact</router-link>
-          </li>
-          <li v-on:click="verticalMenuIsCollapsed = false">
-            <router-link to="/donate">Don</router-link>
           </li>
         </ul>
       </div>
@@ -41,7 +41,9 @@
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
+        <!--
         <b-nav-item href="#">Share</b-nav-item>
+        -->
       </b-navbar-nav>
 
     </b-collapse>

@@ -17,7 +17,10 @@
     <!-- built files will be auto injected -->
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js');
+        navigator.serviceWorker.register('service-worker.js').catch((err) => {
+          console.warn("Unable to register service worker... Cache for offline app access is disabled.");
+          console.warn(err);
+        });
       }
     </script>
   </body>

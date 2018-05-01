@@ -5,7 +5,8 @@
     "alt": "France musique",
     "stream_urls": [
       "http://chai5she.cdn.dvmr.fr/francemusique-midfi.mp3"
-    ]
+    ],
+    "webradioUrl": "https://www.francemusique.fr"
   },
   {
     "logo_png": "static/img/png/logo-nrj.png",
@@ -13,7 +14,8 @@
     "alt": "NRJ",
     "stream_urls": [
       "http://185.52.127.173/fr/30001/mp3_128.mp3?origine=fluxradios"
-    ]
+    ],
+    "webradioUrl": "http://www.nrj.fr"
   },
   {
     "logo_png": "static/img/png/logo-skyrock.png",
@@ -21,7 +23,8 @@
     "alt": "Skyrock",
     "stream_urls": [
       "http://icecast.skyrock.net/s/natio_mp3_128k"
-    ]
+    ],
+    "webradioUrl": "http://www.skyrock.com"
   },
   {
     "logo_png": "static/img/png/logo-rfi.png",
@@ -29,7 +32,8 @@
     "alt": "rfi",
     "stream_urls": [
       "http://live02.rfi.fr/rfimonde-96k.mp3"
-    ]
+    ],
+    "webradioUrl": "http://www.rfi.fr"
   },
   {
     "logo_png": "static/img/png/logo-rfm.png",
@@ -37,7 +41,8 @@
     "alt": "RFM",
     "stream_urls": [
       "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3"
-    ]
+    ],
+    "webradioUrl": "http://www.rfm.fr"
   },
   {
     "logo_png": "static/img/png/logo-france-inter.png",
@@ -53,7 +58,8 @@
     "alt": "Nostalgie",
     "stream_urls": [
       "http://185.52.127.132/fr/30601/mp3_128.mp3?origine=fluxradios"
-    ]
+    ],
+    "webradioUrl": "http://www.nostalgie.fr"
   },
   {
     "logo_png": "static/img/png/logo-virgin-radio.png",
@@ -61,6 +67,7 @@
     "alt": "Virgin radio",
     "stream_urls": [
       "http://vr-live-mp3-128.scdn.arkena.com/virginradio.mp3"
-    ]
+    ],
+    "webradioUrl": "https://www.virginradio.fr"
   }
 ]
