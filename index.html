@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="Description" content="Vue-Radio is a small progressive web application to listen radio">
     <meta name="theme-color" content="#161F2B"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Ecoutez la radio en ligne</title>
@@ -19,7 +20,7 @@
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js').catch((err) => {
           console.warn("Unable to register service worker... Cache for offline app access is disabled.");
-          console.warn(err);
+          //console.warn(err);
         });
       }
     </script>

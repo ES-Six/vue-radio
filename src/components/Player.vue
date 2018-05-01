@@ -4,7 +4,7 @@
     <b-collapse is-nav id="player_collaped">
       <!-- Left aligned nav items -->
       <b-navbar-nav>
-        <b-nav-item href="#">
+        <b-nav-item href="#" class="add-space-to-play-button">
           <i v-if="!isPlaying" v-on:click="playRadio()" class="fa fa-play interface-icon"></i>
           <i v-if="isPlaying" v-on:click="stopRadio()" class="fa fa-stop interface-icon"></i>
         </b-nav-item>

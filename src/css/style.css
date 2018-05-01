@@ -349,6 +349,12 @@ html {
 
 .add-space-to-volume-icon {
   margin-right: 8px;
+  margin-left: 25px;
+}
+
+.add-space-to-play-button {
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
 .fa-dot-circle-o.interface-icon.orange {
@@ -361,6 +367,13 @@ html {
 
 .navbar-bottom {
   bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .navbar-bottom {
+    bottom: 0;
+    margin-top: 6px;
+  }
 }
 
 /* Main Page container */
