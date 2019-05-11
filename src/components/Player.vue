@@ -99,6 +99,11 @@
           window.AudioContext = window.AudioContext || window.webkitAudioContext;
           const audio_context = new AudioContext();
 
+          if (!this.$data.radio) {
+            alert('Vous devez choisir une radio avant de pouvoir enregistrer le direct');
+            return;
+          }
+
           //Demarage du lecteur dédié à l'enregistrement
           this.$data.recorderPlayer = new Audio(this.$data.radio.stream_urls[0]);
           this.$data.recorderPlayer.setAttribute("crossOrigin", "anonymous");

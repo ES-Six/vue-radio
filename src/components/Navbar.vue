@@ -10,7 +10,7 @@
       <div class="container">
         <ul class="menu-items">
           <li v-on:click="verticalMenuIsCollapsed = false">
-            <router-link to="/">Accueil</router-link>
+            <router-link to="/">Liste des stations</router-link>
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false;startSaveRadio()">
             <a href="#">Enregistrer le direct</a>
@@ -23,6 +23,9 @@
           </li>
           <li v-on:click="verticalMenuIsCollapsed = false">
             <router-link to="/contact">Contact</router-link>
+          </li>
+          <li v-on:click="verticalMenuIsCollapsed = false">
+            <router-link to="/legal-disclaimer">Mentions légales</router-link>
           </li>
         </ul>
       </div>

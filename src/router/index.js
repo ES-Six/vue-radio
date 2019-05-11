@@ -4,6 +4,7 @@ import RadioStations from '@/components/RadioStations'
 import About from '@/components/About'
 import Parameters from '@/components/Parameters'
 import Contact from '@/components/Contact'
+import LegalNotice from "../components/LegalNotice";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/parameters',
       name: 'Parameters',
       component: Parameters
+    },
+    {
+      path: '/legal-disclaimer',
+      name: 'Mentions légales',
+      component: LegalNotice
     }
   ]
 })

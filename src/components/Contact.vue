@@ -9,6 +9,10 @@
           Vous pouvez contacter de dévellopeur de ce site web à l'adresse suivante :
           <a href="mailto:brendan.bobis@epitech.eu" target="_blank">brendan.bobis@epitech.eu</a>
         </p>
+        <p>
+          Pour consulter les mentions légales, accedez à la rubrique "Mentions légales" :
+          <router-link to="/legal-disclaimer">Aller à Mentions légales</router-link>
+        </p>
       </div>
     </div>
   </div>

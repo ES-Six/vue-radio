@@ -20,16 +20,6 @@
             <label>NON</label>
             <input type="radio" v-model="animate" value="0"/>
           </li>
-          <li>
-            Mode AMOLED:
-            <label>OUI</label>
-            <input type="radio" v-model="AMOLEDMode" value="1"/>
-            <label>NON</label>
-            <input type="radio" v-model="AMOLEDMode" value="0"/>
-          </li>
-          <li>
-            Ajouter une radio
-          </li>
           <li class="spacing">
             <button class="btn btn-danger btn-fixed-size" v-on:click="reset()">Tout Réinitialiser</button>
           </li>
@@ -57,8 +47,7 @@
     data () {
       return {
         directRecord: "audio/wav",
-        animate: 1,
-        AMOLEDMode: 0
+        animate: 1
       }
     },
     methods: {
@@ -69,19 +58,11 @@
         const config = JSON.parse(window.localStorage.getItem('config'));
         this.$data.directRecord = config.directRecord;
         this.$data.animate = (config.animate ? 1 : 0);
-        this.$data.AMOLEDMode = (config.AMOLEDMode ? 1 : 0);
-      },
-      getCurrentConfig() {
-        if(window.localStorage.getItem('config') === null) {
-          window.localStorage.setItem('config', JSON.stringify(this.getDefaultConfig()));
-        }
-        return JSON.parse(window.localStorage.getItem('config'));
       },
       getDefaultConfig() {
         return {
           directRecord: "audio/wav",
-          animate: 1,
-          AMOLEDMode: 0
+          animate: 1
         };
       },
       apply() {
@@ -91,8 +72,7 @@
       save() {
         window.localStorage.setItem('config', JSON.stringify({
           directRecord: this.$data.directRecord,
-          animate: !!+this.$data.animate,
-          AMOLEDMode: !!+this.$data.AMOLEDMode
+          animate: !!+this.$data.animate
         }));
         this.apply();
         window.location.href = "#/";
